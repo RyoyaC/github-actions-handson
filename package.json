@@ -1,0 +1,22 @@
+{
+  "name": "github-actions-handson",
+  "version": "1.0.0",
+  "description": "Github Actions のハンズオン用リポジトリ",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyoyaC/github-actions-handson.git"
+  },
+  "author": "RyoyaC",
+  "devDependencies": {
+    "@cybozu/eslint-config": "^22.0.2",
+    "eslint": "^8.56.0",
+    "mocha": "^10.3.0",
+    "prettier": "^3.2.5"
+  }
+}
