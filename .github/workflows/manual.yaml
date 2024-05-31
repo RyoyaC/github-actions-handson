@@ -9,9 +9,8 @@ on:
         description: 実行環境
 
 jobs:
-  unit-test:
-    name: Unit Test
+  print-env:
+    name: print env
     runs-on: ubuntu-latest
     steps:
-      - name: print-env
-        run: echo "${{ inputs.env }}"
+      - run: echo "${{ inputs.env }}"
