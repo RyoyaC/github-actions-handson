@@ -1,0 +1,39 @@
+name: Manual Trigger
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        type: string
+        default: dev
+        required: true
+        description: 実行環境
+
+jobs:
+  unit-test:
+    name: Unit Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.0.0
+      - name: Set Node.js 16.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+      - name: Install dependencies
+        run: npm ci
+      - name: Testing
+        run: npm test
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.0.0
+      - name: Set Node.js 16.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
